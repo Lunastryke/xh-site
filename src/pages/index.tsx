@@ -2,6 +2,8 @@ import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
 import { createGlobalStyle } from "styled-components";
 import LandingPage from "./landing";
+import NavigationBar from "./navigationbar";
+import { AnimatePresence } from "framer-motion";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -12,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const pageStyles = {
-  padding: "5%",
+  padding: "2.5% 0%",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
 const headingAccentStyles = {
@@ -130,11 +132,15 @@ const links = [
 ];
 
 const IndexPage: React.FC<PageProps> = () => {
+  const [page, setPage] = React.useState("landing");
   return (
     <React.Fragment>
       <GlobalStyle />
       <main style={pageStyles}>
-        <LandingPage />
+        <NavigationBar />
+        <AnimatePresence>
+          {page === "landing" ? <LandingPage /> : <></>}
+        </AnimatePresence>
         {/* <h1 style={headingStyles}>
           Congratulations
           <br />
