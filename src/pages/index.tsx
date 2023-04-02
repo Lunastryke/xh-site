@@ -14,12 +14,6 @@ const GlobalStyle = createGlobalStyle`
 const pageStyles = {
   padding: "5%",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
-  alignItems: "center",
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
 };
 const headingAccentStyles = {
   color: "#663399",
@@ -34,20 +28,9 @@ const codeStyles = {
   fontSize: "1.25rem",
   borderRadius: 4,
 };
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-};
 const doclistStyles = {
   paddingLeft: 0,
 };
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-};
-
 const linkStyle = {
   color: "#8954A8",
   fontWeight: "bold",
@@ -152,7 +135,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <GlobalStyle />
       <main style={pageStyles}>
         <LandingPage />
-        <h1 style={headingStyles}>
+        {/* <h1 style={headingStyles}>
           Congratulations
           <br />
           <span style={headingAccentStyles}>
@@ -172,26 +155,6 @@ const IndexPage: React.FC<PageProps> = () => {
               >
                 {doc.text}
               </a>
-            </li>
-          ))}
-        </ul>
-        {/* <ul style={listStyles}>
-          {links.map((link) => (
-            <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-              <span>
-                <a
-                  style={linkStyle}
-                  href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter-ts`}
-                >
-                  {link.text}
-                </a>
-                {link.badge && (
-                  <span style={badgeStyle} aria-label="New Badge">
-                    NEW!
-                  </span>
-                )}
-                <p style={descriptionStyle}>{link.description}</p>
-              </span>
             </li>
           ))}
         </ul> */}
